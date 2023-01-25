@@ -1,0 +1,26 @@
+export type Ping = {
+    lastPingSent?: number;
+    lastPingReceived?: number;
+    socketID: string;
+
+    cpuUsage?: number;
+    memoryUsage?: number;
+
+    isAlive: boolean;
+}
+
+export type Room = {
+    appName: string;
+    sockets: Ping[];
+}
+export const rooms: Room[] = []
+
+export const getPings = () => {
+    const pings: Ping[] = [];
+    rooms.forEach(room => {
+        room.sockets.forEach(socket => {
+            pings.push(socket);
+        })
+    })
+    return pings;
+}
