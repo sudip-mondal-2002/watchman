@@ -1,8 +1,9 @@
 {
-  "name": "@shaastra-wf/registrar",
+  "name": "@sudipmondal/registrar",
   "version": "1.0.0",
   "description": "A building block for the registry server",
   "main": "./dist/index.js",
+  "private": false,
   "scripts": {
     "prebuild": "del-cli ./dist",
     "build": "tsc"
