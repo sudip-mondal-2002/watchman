@@ -5,6 +5,8 @@ require('dotenv').config();
 
 const app = express();
 
+app.use(requestMonitor);
+
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello World! This is service A");
 });
@@ -13,8 +15,6 @@ app.use((err: Error, req: Request, res: Response, next:NextFunction) => {
     res.status(500).send('Something broke!');
     next();
 })
-
-app.use(requestMonitor);
 
 connectToServer(process.env.WATCHMAN_URL!)
 

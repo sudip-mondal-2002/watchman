@@ -4,6 +4,7 @@ import  {connectToServer, requestMonitor} from "@sudipmondal/watchman";
 require('dotenv').config();
 
 const app = express();
+app.use(requestMonitor);
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello World! This is service B");
@@ -22,7 +23,6 @@ app.use((err: Error, req: Request, res: Response, next:NextFunction) => {
     next();
 })
 
-app.use(requestMonitor);
 
 connectToServer(process.env.WATCHMAN_URL!)
 app.listen(process.env.PORT, () => {
