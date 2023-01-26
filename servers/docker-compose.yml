@@ -1,0 +1,50 @@
+version: "3.9"
+services:
+  monitor:
+    build:
+        context: ./monitor
+        dockerfile: Dockerfile
+    container_name: monitor
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - monitor-net
+
+  service-a:
+    build:
+        context: ./microservices/serviceA
+        dockerfile: Dockerfile
+    container_name: service-a
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - monitor-net
+    depends_on:
+      - monitor
+    environment:
+      - PORT=8000
+      - APP_NAME=service-a
+      - WATCHMAN_URL=http://monitor:3000
+
+  service-b:
+    build:
+        context: ./microservices/serviceB
+        dockerfile: Dockerfile
+    container_name: service-b
+    restart: always
+    ports:
+      - "8001:8001"
+    networks:
+      - monitor-net
+    depends_on:
+      - monitor
+    environment:
+      - PORT=8001
+      - APP_NAME=service-b
+      - WATCHMAN_URL=http://monitor:3000
+
+networks:
+    monitor-net:
+        driver: bridge
