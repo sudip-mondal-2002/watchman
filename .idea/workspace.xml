@@ -5,37 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b276be7-1c38-4230-9bd4-ebf8a89ad6f0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/servers/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servers/microservices/serviceA/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servers/microservices/serviceA/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servers/microservices/serviceB/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servers/microservices/serviceB/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servers/monitor/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servers/monitor/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/.idea/registrar.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/classes/WebSocketClient.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/classes/WebSocketServer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/connections/ConnectToServer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/connections/StartServer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/data/Rooms.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/data/client.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/meta/Events.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/meta/Heartbeat.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/meta/RequestReceived.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/middlewares/RequestMonitor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/views/monitor.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/views/socket.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/registrar/views/socket.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/modules/registrar/views/socket.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/servers/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceA/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceA/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceA/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceA/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceA/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceA/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +85,7 @@
       <workItem from="1674663191726" duration="3920000" />
       <workItem from="1674707734188" duration="133000" />
       <workItem from="1674707922580" duration="12140000" />
-      <workItem from="1674732828135" duration="1157000" />
+      <workItem from="1674732828135" duration="2864000" />
     </task>
     <servers />
   </component>
