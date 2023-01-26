@@ -9,8 +9,9 @@ export type Ping = {
     lastPingReceived?: number;
     socketID: string;
 
-    cpuUsage?: number;
-    memoryUsage?: number;
+    timestamps: number[];
+    cpuUsage: number[];
+    memoryUsage: number[];
 
     isAlive: boolean;
 

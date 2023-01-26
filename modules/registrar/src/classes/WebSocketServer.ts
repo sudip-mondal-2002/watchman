@@ -27,14 +27,20 @@ export class WebSocketServer {
                 sockets: [{
                     socketID: socket.id,
                     isAlive: true,
-                    requests: []
+                    requests: [],
+                    cpuUsage: [],
+                    memoryUsage: [],
+                    timestamps: []
                 }]
             })
         } else {
             room.sockets.push({
                 socketID: socket.id,
                 isAlive: true,
-                requests: []
+                requests: [],
+                cpuUsage: [],
+                memoryUsage: [],
+                timestamps: []
             })
         }
         this.sendHeartbeat(socket.id);
@@ -69,8 +75,9 @@ export class WebSocketServer {
         pings.forEach((ping, index) => {
             if (ping.socketID === payload.socketID) {
                 pings[index].lastPingReceived = payload.timestamp;
-                pings[index].cpuUsage = Math.floor(payload.cpuUsage*100)/100;
-                pings[index].memoryUsage = Math.floor(payload.memoryUsage*100)/100;
+                pings[index].cpuUsage.push(Math.floor(payload.cpuUsage*100)/100);
+                pings[index].memoryUsage.push(Math.floor(payload.memoryUsage*100)/100);
+                pings[index].timestamps.push(payload.timestamp);
                 pings[index].isAlive = true;
             }
         });

@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="7b276be7-1c38-4230-9bd4-ebf8a89ad6f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/registrar/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/registrar/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/registrar/src/classes/WebSocketServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/registrar/src/classes/WebSocketServer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/registrar/src/connections/StartServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/registrar/src/connections/StartServer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/registrar/src/data/Rooms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/registrar/src/data/Rooms.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/registrar/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/registrar/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/registrar/views/monitor.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/modules/registrar/views/monitor.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/registrar/views/socket.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/modules/registrar/views/socket.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/servers/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceA/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceA/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceA/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceA/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceA/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceA/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/monitor/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/monitor/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/monitor/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/monitor/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +89,7 @@
       <workItem from="1674663191726" duration="3920000" />
       <workItem from="1674707734188" duration="133000" />
       <workItem from="1674707922580" duration="12140000" />
-      <workItem from="1674732828135" duration="2864000" />
+      <workItem from="1674732828135" duration="7566000" />
     </task>
     <servers />
   </component>

@@ -19,8 +19,8 @@
         <% room.sockets.forEach(socket=>{ %>
             <a class="row" href="/<%= socket.socketID %>">
                 <div class="col"><%= socket.socketID %></div>
-                <div class="col"><%= socket.cpuUsage %></div>
-                <div class="col"><%= socket.memoryUsage %></div>
+                <div class="col"><%= socket.cpuUsage[socket.cpuUsage.length -1] %></div>
+                <div class="col"><%= socket.memoryUsage[socket.memoryUsage.length -1] %></div>
                 <div class="col"><%= socket.isAlive %></div>
             </a>
         <% }) %>

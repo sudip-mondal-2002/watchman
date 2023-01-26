@@ -6,8 +6,12 @@
     <script src='https://cdn.plot.ly/plotly-2.18.0.min.js'></script>
 </head>
 <body>
-<h2>Request frequency density</h2>
 <div id="request-plot"></div>
+<hr />
+<div id="memory-plot"></div>
+<hr />
+<div id="cpu-plot"></div>
+
 
 <script>
     const requests = [{
@@ -15,16 +19,60 @@
         y: [],
         type: 'scatter'
     }];
+    <% if (socket.timestamps.length > 0){ %>
+    let time_0 = (new Date(<%= socket.timestamps[0] %>)).toISOString()
+    requests[0].x.push(time_0.slice(0, 10) + ' ' + time_0.slice(11, 22))
+    requests[0].y.push(0)
+    <% } %>
     <% socket.requests.forEach((request, index) => { %>
-
     <% if (index > 0) { %>
-    let time_<%= index %> = (new Date(<%= socket.requests[index].timestamp %>)).toISOString()
-    requests[0].x.push(time_<%= index %>.slice(0, 10) + " " + time_<%= index %>.slice(11, 22))
+    let time_0<%= index %> = (new Date(<%= socket.requests[index].timestamp %>)).toISOString()
+    requests[0].x.push(time_0<%= index %>.slice(0, 10) + " " + time_0<%= index %>.slice(11, 22))
     requests[0].y.push(1 / parseInt('<%= socket.requests[index].timestamp - socket.requests[index - 1].timestamp %>'))
     <% } %>
     <% }) %>
+    let time_1 = (new Date(<%= socket.timestamps[socket.timestamps.length - 1] %>)).toISOString()
+    requests[0].x.push(time_1.slice(0, 10) + ' ' + time_1.slice(11, 22))
+    requests[0].y.push(0)
 
-    Plotly.newPlot("request-plot", requests)
+    const memory = [{
+        x: [],
+        y: [],
+        type: 'scatter'
+    }];
+    <% socket.memoryUsage.forEach((memoryUsage, index) => { %>
+    let time_1<%= index %> = (new Date(<%= socket.timestamps[index] %>)).toISOString()
+    memory[0].x.push(time_1<%= index %>.slice(0, 10) + " " + time_1<%= index %>.slice(11, 22))
+    memory[0].y.push(<%= memoryUsage %>)
+    <% }) %>
+
+    const cpu = [{
+        x: [],
+        y: [],
+        type: 'scatter'
+    }];
+
+    <% socket.cpuUsage.forEach((cpuUsage, index) => { %>
+    time_2<%= index %> = (new Date(<%= socket.timestamps[index] %>)).toISOString()
+    cpu[0].x.push(time_2<%= index %>.slice(0, 10) + " " + time_2<%= index %>.slice(11, 22))
+    cpu[0].y.push(<%= cpuUsage %>)
+    <% }) %>
+
+    Plotly.newPlot("request-plot", requests,{
+        title: 'Request frequency density',
+        yaxis: {title: 'Request/ms'},
+        xaxis: {title: 'Timestamp'}
+    })
+    Plotly.newPlot("memory-plot", memory,{
+        title: 'Memory usage',
+        yaxis: {title: 'Memory Usage(%)'},
+        xaxis: {title: 'Timestamp'}
+    })
+    Plotly.newPlot("cpu-plot", cpu, {
+        title: 'CPU usage',
+        yaxis: {title: 'CPU usage(%)'},
+        xaxis: {title: 'Timestamp'}
+    })
 </script>
 </body>
 </html>
