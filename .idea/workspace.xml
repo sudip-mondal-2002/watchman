@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b276be7-1c38-4230-9bd4-ebf8a89ad6f0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/watchman/views/socket.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/watchman/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/watchman/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/classes/WebSocketServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/watchman/src/classes/WebSocketServer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/connections/StartServer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/watchman/src/connections/StartServer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/data/Rooms.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/watchman/src/data/Rooms.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/watchman/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/src/middlewares/RequestMonitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/watchman/src/middlewares/RequestMonitor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/watchman/views/monitor.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/modules/watchman/views/monitor.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceB/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceB/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceB/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceB/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceB/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceB/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceA/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceA/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/microservices/serviceA/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/microservices/serviceA/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/monitor/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/monitor/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/monitor/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/servers/monitor/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +83,7 @@
       <workItem from="1674652603176" duration="8634000" />
       <workItem from="1674663191726" duration="3920000" />
       <workItem from="1674707734188" duration="133000" />
-      <workItem from="1674707922580" duration="10768000" />
+      <workItem from="1674707922580" duration="11834000" />
     </task>
     <servers />
   </component>
