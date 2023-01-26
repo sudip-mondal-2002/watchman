@@ -1,6 +1,6 @@
 {
   "name": "@sudipmondal/watchman",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "A building block for the watchman server and client",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

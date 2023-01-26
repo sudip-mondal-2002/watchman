@@ -1,9 +1,10 @@
 import {HeartBeatAck, HeartBeatPing} from "../meta/Heartbeat";
-
-const socket = require('socket.io')
 import {Events} from "../meta/Events";
 import {Server} from "http";
-import {rooms, getPings} from "../data/Rooms";
+import {rooms, getPings, RequestPayload} from "../data/Rooms";
+import {RequestReceived} from "../meta/RequestReceived";
+
+const socket = require('socket.io')
 export class WebSocketServer {
     private io;
     private interval = 1000;
@@ -25,18 +26,21 @@ export class WebSocketServer {
                 appName,
                 sockets: [{
                     socketID: socket.id,
-                    isAlive: true
+                    isAlive: true,
+                    requests: []
                 }]
             })
         } else {
             room.sockets.push({
                 socketID: socket.id,
-                isAlive: true
+                isAlive: true,
+                requests: []
             })
         }
         this.sendHeartbeat(socket.id);
         socket.on(Events.HEARTBEAT_ACK, this.onHeartbeat)
         socket.on("disconnect", this.onDisconnect);
+        socket.on(Events.REQUEST, this.onRequest);
     }
 
     onDisconnect = (socketID: string) => {
@@ -67,6 +71,7 @@ export class WebSocketServer {
                 pings[index].lastPingReceived = payload.timestamp;
                 pings[index].cpuUsage = Math.floor(payload.cpuUsage*100)/100;
                 pings[index].memoryUsage = Math.floor(payload.memoryUsage*100)/100;
+                pings[index].isAlive = true;
             }
         });
     }
@@ -82,5 +87,17 @@ export class WebSocketServer {
                 }
             })
         }, this.interval);
+    }
+    onRequest = (payload: RequestReceived) => {
+        const room = rooms.find(room => room.sockets.find(socket => socket.socketID === payload.socketID));
+        if (!room) { return; }
+        const ping = room.sockets.find(socket => socket.socketID === payload.socketID);
+        if (!ping) { return; }
+        const request: RequestPayload = {
+            origin: payload.origin,
+            responseStatus: payload.responseStatus,
+            timestamp: Date.now()
+        }
+        ping.requests.push(request);
     }
 }

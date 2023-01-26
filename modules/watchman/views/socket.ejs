@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <title>Socket ID: <%= socket.socketID %></title>
+    <script src='https://cdn.plot.ly/plotly-2.18.0.min.js'></script>
+</head>
+<body>
+<div id="plot"></div>
+<script>
+    const requests = [{
+        x: [],
+        y: [],
+        type: 'scatter'
+    }];
+    <% socket.requests.forEach((request, index) => { %>
+
+    <% if (index > 0) { %>
+    let time_<%= index %> = (new Date(<%= socket.requests[index].timestamp %>)).toISOString()
+    requests[0].x.push(time_<%= index %>.slice(0, 10) + " " + time_<%= index %>.slice(11, 22))
+    requests[0].y.push(1 / parseInt('<%= socket.requests[index].timestamp - socket.requests[index - 1].timestamp %>'))
+    <% } %>
+    <% }) %>
+    Plotly.newPlot("plot", requests)
+</script>
+</body>
+</html>

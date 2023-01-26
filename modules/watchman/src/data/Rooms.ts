@@ -1,3 +1,9 @@
+export type RequestPayload = {
+    timestamp: number;
+    responseStatus: number;
+    origin: string;
+}
+
 export type Ping = {
     lastPingSent?: number;
     lastPingReceived?: number;
@@ -7,6 +13,8 @@ export type Ping = {
     memoryUsage?: number;
 
     isAlive: boolean;
+
+    requests: RequestPayload[]
 }
 
 export type Room = {

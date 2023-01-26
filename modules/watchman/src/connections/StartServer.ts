@@ -14,5 +14,18 @@ export const startServer = () => {
             rooms: rooms
         });
     });
+    server.get("/:socketID", (req, res) => {
+        const room = rooms.find(room => room.sockets.find(socket => socket.socketID === req.params.socketID));
+        if (!room) {
+            return res.status(404).send("Not Found");
+        }
+        const socket = room.sockets.find(socket => socket.socketID === req.params.socketID);
+        if (!socket) {
+            return res.status(404).send("Not Found");
+        }
+        res.render("socket", {
+            socket: socket,
+        })
+    });
     return httpServer
 }

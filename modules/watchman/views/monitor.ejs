@@ -14,13 +14,15 @@
             <div class="col">Socket ID</div>
             <div class="col">CPU Usage</div>
             <div class="col">Memory Usage</div>
+            <div class="col">Is Alive?</div>
         </div>
         <% room.sockets.forEach(socket=>{ %>
-            <div class="row">
+            <a class="row" href="/<%= socket.socketID %>">
                 <div class="col"><%= socket.socketID %></div>
                 <div class="col"><%= socket.cpuUsage %></div>
                 <div class="col"><%= socket.memoryUsage %></div>
-            </div>
+                <div class="col"><%= socket.isAlive %></div>
+            </a>
         <% }) %>
     </div>
 <% }) %>
