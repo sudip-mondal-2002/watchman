@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@sudipmondal/watchman": "^1.1.0",
+    "axios": "^1.2.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
   },

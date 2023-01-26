@@ -27,6 +27,7 @@ services:
       - PORT=8000
       - APP_NAME=service-a
       - WATCHMAN_URL=http://monitor:3000
+      - SERVICE_B_URL=http://service-b:8001
 
   service-b:
     build:
