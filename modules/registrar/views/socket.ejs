@@ -1,10 +1,14 @@
 <html lang="en">
 <head>
     <title>Socket ID: <%= socket.socketID %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src='https://cdn.plot.ly/plotly-2.18.0.min.js'></script>
 </head>
 <body>
-<div id="plot"></div>
+<h2>Request frequency density</h2>
+<div id="request-plot"></div>
+
 <script>
     const requests = [{
         x: [],
@@ -19,7 +23,8 @@
     requests[0].y.push(1 / parseInt('<%= socket.requests[index].timestamp - socket.requests[index - 1].timestamp %>'))
     <% } %>
     <% }) %>
-    Plotly.newPlot("plot", requests)
+
+    Plotly.newPlot("request-plot", requests)
 </script>
 </body>
 </html>
