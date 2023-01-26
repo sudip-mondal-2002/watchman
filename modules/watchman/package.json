@@ -1,8 +1,13 @@
 {
-  "name": "@sudipmondal/registrar",
-  "version": "1.0.0",
-  "description": "A building block for the registry server",
+  "name": "@sudipmondal/watchman",
+  "version": "1.0.5",
+  "description": "A building block for the watchman server and client",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "views/"
+  ],
   "private": false,
   "scripts": {
     "prebuild": "del-cli ./dist",
